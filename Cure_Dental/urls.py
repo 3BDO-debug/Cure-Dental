@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from Doctors.views import doctors_view
 from Patients_Cases.views import cases_view
+from Branches.views import branches_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Doctors/View', doctors_view),
-    path('Cases/View', cases_view)
+    path('Cases/View', cases_view),
+    path('Branches/View', branches_view)
 ]
