@@ -1,0 +1,1 @@
+web: gunicorn Cure_Dental.wsgi --log-file -
