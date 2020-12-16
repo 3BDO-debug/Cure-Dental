@@ -79,9 +79,13 @@ WSGI_APPLICATION = "Cure_Dental.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5tsug8ifekiv7',
+        'HOST': 'ec2-54-76-215-139.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'mxzehuqbtxffif',
+        'PASSWORD': '3cfcaf0c201ce033b3921d4be5475627e1f50d75461d6311b8374971a4eb0642'
     }
 }
 
