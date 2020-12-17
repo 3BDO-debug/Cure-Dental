@@ -4,5 +4,5 @@ from . import models
 class CasesSeriallizer(ModelSerializer):
     class Meta:
         model = models.Case
-        fields = ('case_img', 'patient_name',)
+        fields = ('case_img',)
         
