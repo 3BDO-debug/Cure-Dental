@@ -18,6 +18,9 @@ from django.urls import path
 from Doctors.views import doctors_view
 from Patients_Cases.views import cases_view
 from Branches.views import branches_view
+from Booking.views import booking_handler
+from Feedback.views import feedback_handler
+from Consultation.views import consultation_handler
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,7 +28,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Doctors/View', doctors_view),
     path('Cases/View', cases_view),
-    path('Branches/View', branches_view)
+    path('Branches/View', branches_view),
+    path('Booking/Create-New-Booking', booking_handler),
+    path('Feedback/Create-New-Feedback',feedback_handler),
+    path('Consultation/Create-New-Consultation', consultation_handler)
 ]
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)

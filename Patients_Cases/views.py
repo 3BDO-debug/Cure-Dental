@@ -13,7 +13,8 @@ def cases_view(request):
     api_response = []
     for data in cases:
         response = {
-            "source": {"uri": f"https://cure-dental.herokuapp.com/media/{data.case_img.name}"},
+            "source": {"uri": f"https://cure-dental.herokuapp.com/media/{data.case_before_img.name}"},
+            "source2":{"uri": f"https://cure-dental.herokuapp.com/media/{data.case_after_img.name}"},
             'width':806,
             'height':720,
         }

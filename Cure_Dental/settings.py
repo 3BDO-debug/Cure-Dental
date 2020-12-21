@@ -25,7 +25,7 @@ SECRET_KEY = "f^9%pr!xhs#s&qas!o40v!&et@%a4x^$6iy31gy=rhqar#=g&("
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cure-dental.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['cure-dental.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     "Doctors",
     "Patients_Cases",
     "Branches",
-    'storages',
+    "Booking",
+    "Feedback",
+    "Consultation",
 ]
 
 MIDDLEWARE = [
-        "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -134,22 +136,3 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-AWS_ACCESS_KEY_ID = 'AKIA2JMLKL23IHDGQHEY'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'tkc-django-assets'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_LOCATION = 'static'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-
-DEFAULT_FILE_STORAGE = 'Cure_Dental.storage_backends.MediaStorage'
-
-
-
-import django_heroku
-django_heroku.settings(locals())
