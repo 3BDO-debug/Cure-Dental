@@ -21,6 +21,9 @@ from Branches.views import branches_view
 from Booking.views import booking_handler
 from Feedback.views import feedback_handler
 from Consultation.views import consultation_handler
+from Offers.views import offers_handler
+from Pricings.views import pricings_handler
+from Tips.views import tip_view
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,10 +31,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Doctors/View', doctors_view),
     path('Cases/View', cases_view),
+    path('Offers/View', offers_handler),
+    path('Pricings/View', pricings_handler),
     path('Branches/View', branches_view),
     path('Booking/Create-New-Booking', booking_handler),
     path('Feedback/Create-New-Feedback',feedback_handler),
-    path('Consultation/Create-New-Consultation', consultation_handler)
+    path('Consultation/Create-New-Consultation', consultation_handler),
+    path('Tips/View', tip_view)
 ]
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)
