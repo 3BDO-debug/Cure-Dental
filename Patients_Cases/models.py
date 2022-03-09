@@ -14,4 +14,4 @@ class Case(models.Model):
         verbose_name_plural = "Cases"
 
     def __str__(self):
-        return self.patient_name
+        return self.patient_english_name

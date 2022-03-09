@@ -4,4 +4,4 @@ from . import models
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Offer
-        fields = ('offer',)
+        fields = '__all__'

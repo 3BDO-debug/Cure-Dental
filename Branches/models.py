@@ -38,4 +38,4 @@ class Branch(models.Model):
         verbose_name_plural = "Branches"
 
     def __str__(self):
-        return self.branch_name
+        return self.branch_english_name

@@ -10,5 +10,5 @@ from . import serializers
 def cases_view(request):
     cases = models.Case.objects.all()
     serializer = serializers.CasesSeriallizer(cases, many=True)
-    
-    return Response(serializer.data, safe=False)
+
+    return Response(serializer.data)
