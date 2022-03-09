@@ -11,4 +11,4 @@ class Pricing(models.Model):
         verbose_name = "Pricing"
         verbose_name_plural = "Pricings"
     def __str__(self):
-        return self.item_name
+        return self.item_english_name

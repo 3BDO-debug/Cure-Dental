@@ -23,6 +23,7 @@ from Feedback.views import feedback_handler
 from Consultation.views import consultation_handler
 from Offers.views import offers_handler
 from Pricings.views import pricings_handler
+from ItemsOffers.views import items_offers_handler
 from Tips.views import tip_view
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,11 +34,12 @@ urlpatterns = [
     path('Cases/View', cases_view),
     path('Offers/View', offers_handler),
     path('Pricings/View', pricings_handler),
+    path('Items-Offers/View', items_offers_handler),
     path('Branches/View', branches_view),
     path('Booking/Create-New-Booking', booking_handler),
     path('Feedback/Create-New-Feedback',feedback_handler),
     path('Consultation/Create-New-Consultation', consultation_handler),
-    path('Tips/View', tip_view)
+    path('Tips/View', tip_view),
 ]
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)

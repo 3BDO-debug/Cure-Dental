@@ -25,7 +25,7 @@ SECRET_KEY = "f^9%pr!xhs#s&qas!o40v!&et@%a4x^$6iy31gy=rhqar#=g&("
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cure-dental.herokuapp.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['cure-dental.herokuapp.com','127.0.0.1','localhost', "curedental.pythonanywhere.com"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'corsheaders',
     "rest_framework",
     "Doctors",
     "Patients_Cases",
@@ -46,15 +47,18 @@ INSTALLED_APPS = [
     "Consultation",
     "Pricings",
     "Offers",
-    "Tips"
+    "ItemsOffers",
+    "Tips",
+    "Notification_Pusher",
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    #"django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -91,6 +95,13 @@ WSGI_APPLICATION = "Cure_Dental.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd5tsug8ifekiv7',
@@ -100,7 +111,7 @@ DATABASES = {
         'PASSWORD': '3cfcaf0c201ce033b3921d4be5475627e1f50d75461d6311b8374971a4eb0642'
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -134,7 +145,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+CORS_ALLOW_ALL_ORIGINS = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

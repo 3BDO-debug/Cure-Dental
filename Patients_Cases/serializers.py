@@ -4,5 +4,4 @@ from . import models
 class CasesSeriallizer(ModelSerializer):
     class Meta:
         model = models.Case
-        fields = ('case_img',)
-        
+        fields = '__all__'

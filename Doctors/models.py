@@ -11,7 +11,6 @@ class Doctor(models.Model):
     class Meta:
         verbose_name = "Doctor"
         verbose_name_plural = "Doctors"
-    
+
     def __str__(self):
-        return self.doctor_name
-    
+        return self.doctor_english_name

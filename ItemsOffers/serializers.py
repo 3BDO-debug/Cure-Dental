@@ -1,0 +1,7 @@
+from rest_framework.serializers import ModelSerializer
+from . import models
+
+class ItemsOffersSeriallizer(ModelSerializer):
+    class Meta:
+        model = models.ItemOffer
+        fields = '__all__'
